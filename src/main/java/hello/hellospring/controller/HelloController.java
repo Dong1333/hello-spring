@@ -1,5 +1,6 @@
 package hello.hellospring.controller;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HelloController {
 
     @GetMapping("hello")
-    public String hello(Model model) {
+    public String hello(@NotNull Model model) {
         model.addAttribute("data", "hello!");
         return "hello";
     }
